@@ -37,7 +37,27 @@ and stop.
 
 ---
 
-**Step 4 — Screen for secrets**
+**Step 4 — Code review gate**
+
+List the staged files (`git diff --cached --name-only`) and filter to script/code files — POM
+files, base classes, config, framework scaffolding (`.ts`/`.js` under `src/`, `tests/`,
+`playwright.config.ts`, etc.), per the file types covered in CLAUDE.md §5.
+
+If that list is non-empty, run the `Code-reviewer` agent (`.claude/agents/code_reviewer.md`) over
+those files now — even if a calling skill (e.g. `/skills:init-framework`, `/skills:heal-and-run`)
+already ran it earlier in the same flow, since files may have changed since. Code-reviewer applies
+its fixes directly.
+
+After it runs, re-check: if Code-reviewer's report leaves any comment unresolved (something it
+flagged but did not or could not fix), **stop — do not commit or push.** Show the user the
+outstanding comment(s) instead. If Code-reviewer applied fixes, re-stage them (`git add -A`)
+before continuing to Step 5.
+
+If Code-reviewer has no comments (nothing to flag, or everything it flagged was fixed), continue.
+
+---
+
+**Step 5 — Screen for secrets**
 
 List staged files (`git diff --cached --name-only`). If anything looks like a secret or
 credential (`.env`, `*.key`, `*.pem`, credentials/service-account files, etc.) and is **not**
@@ -46,7 +66,7 @@ user instead of committing it.
 
 ---
 
-**Step 5 — Commit**
+**Step 6 — Commit**
 
 ```bash
 git commit -m "<concise message describing what changed>"
@@ -57,7 +77,7 @@ Use a message that reflects the trigger, e.g. `Scaffold Playwright framework` af
 
 ---
 
-**Step 6 — Push**
+**Step 7 — Push**
 
 ```bash
 git push
