@@ -50,10 +50,22 @@ its fixes directly.
 
 After it runs, re-check: if Code-reviewer's report leaves any comment unresolved (something it
 flagged but did not or could not fix), **stop — do not commit or push.** Show the user the
-outstanding comment(s) instead. If Code-reviewer applied fixes, re-stage them (`git add -A`)
-before continuing to Step 5.
+outstanding comment(s) instead.
 
-If Code-reviewer has no comments (nothing to flag, or everything it flagged was fixed), continue.
+If Code-reviewer applied edits, do not trust the last test run to still be valid — the code has
+changed since. Re-stage the edits (`git add -A`), then check whether a test suite already exists
+(any `*.spec.ts` files under `tests/`). If it does, re-run it before going any further:
+
+```bash
+npx playwright test --reporter=list 2>&1
+```
+
+If this re-run fails, **stop — do not commit or push.** This is a regression introduced by the
+Code-reviewer fix, not the original code — report it as such and tell the user to run
+`/skills:heal-and-run` to resolve it, then retry publishing. Do not attempt to fix it here.
+
+Continue to Step 5 only if: Code-reviewer had no comments to begin with, or its edits passed the
+re-run above (or there was no test suite yet to re-run).
 
 ---
 
