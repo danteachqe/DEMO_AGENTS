@@ -69,3 +69,12 @@ Include scripts: `test`, `test:headed`, `test:ui`, `test:report`. Include dev de
 After all files above are generated, run the `Code-reviewer` agent
 (`.claude/agents/code_reviewer.md`) over the scaffolded scripts (`src/pages/BasePage.ts`,
 `src/utils/config-loader.ts`, `playwright.config.ts`) before reporting completion.
+
+---
+
+## Publish
+
+Once the Code-reviewer pass is complete and the scaffold is in a working state, run the
+`/skills:push-to-github` skill to commit and push the newly initialized framework. Skip this
+step only if `/skills:push-to-github` reports there is no git repository or no remote
+configured.

@@ -46,7 +46,8 @@ Only after Step 1 is complete:
 npx playwright test $ARGUMENTS --reporter=list 2>&1
 ```
 
-If all tests pass, output: `All tests passed. No fixes needed.` and stop.
+If all tests pass, output: `All tests passed. No fixes needed.`, run the
+`/skills:push-to-github` skill to publish the current state, then stop.
 
 ---
 
@@ -121,3 +122,11 @@ If tests still fail after one fix cycle, report remaining errors and stop — do
 
 If any `src/pages/` file was edited in Step 1 or Step 5, run the `Code-reviewer` agent
 (`.claude/agents/code_reviewer.md`) on the changed POM file(s) before finishing.
+
+---
+
+**Step 8 — Publish**
+
+Only if Step 6's re-run passed (no remaining failures): run the `/skills:push-to-github` skill
+to commit and push the healed fixes. If tests still failed after the fix cycle, do not publish —
+report the remaining errors instead, per Step 6.

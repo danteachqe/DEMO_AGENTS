@@ -42,8 +42,15 @@ requirements) — do not duplicate those rules here; edit the skill file instead
 | `/skills:new-test <name>` | Full workflow: spec → POM → data → test |
 | `/skills:review-tests <path>` | Check files against framework standards |
 | `/skills:heal-and-run <test>` | Verify selectors against the live app, then run tests, detect discrepancies, fix POM, re-run |
+| `/skills:push-to-github` | Commit and push the current framework state to the GitHub repo |
 
 Skills are defined in `.claude/commands/skills/`.
+
+`/skills:push-to-github` runs automatically as the final step of `/skills:init-framework` (after
+successful scaffolding) and `/skills:heal-and-run` (after a successful test run) — see those
+skill files for the exact conditions. It is pre-authorized to `git add`, `commit`, and `push` in
+this repo without asking for confirmation each time; it does not create a repo/remote and will
+stop and warn instead of committing anything that looks like a secret.
 
 ---
 
