@@ -1,0 +1,52 @@
+{
+  "expected": {
+    "homeHeading": "Welcome to the Simple Travel Agency!",
+    "reservedHeadingPattern": "has been reserved",
+    "confirmationHeading": "Thank you for your purchase today!",
+    "status": "PendingCapture"
+  },
+  "visaBooking": {
+    "route": {
+      "departure": "Paris",
+      "destination": "London"
+    },
+    "flightIndex": 0,
+    "rememberMe": true,
+    "passenger": {
+      "name": "John Smith",
+      "address": "123 Main St.",
+      "city": "Anytown",
+      "state": "CA",
+      "zipCode": "12345"
+    },
+    "payment": {
+      "cardType": "visa",
+      "cardNumber": "4111111111111111",
+      "cardMonth": "12",
+      "cardYear": "2030",
+      "nameOnCard": "John Smith"
+    }
+  },
+  "amexBooking": {
+    "route": {
+      "departure": "Boston",
+      "destination": "Berlin"
+    },
+    "flightIndex": 2,
+    "rememberMe": false,
+    "passenger": {
+      "name": "Jane Doe",
+      "address": "456 Oak Avenue",
+      "city": "Springfield",
+      "state": "IL",
+      "zipCode": "62704"
+    },
+    "payment": {
+      "cardType": "amex",
+      "cardNumber": "378282246310005",
+      "cardMonth": "06",
+      "cardYear": "2031",
+      "nameOnCard": "Jane Doe"
+    }
+  }
+}
