@@ -10,7 +10,7 @@
       "departure": "Paris",
       "destination": "London"
     },
-    "flightIndex": 0,
+    "flightNumber": "43",
     "rememberMe": true,
     "passenger": {
       "name": "John Smith",
@@ -32,7 +32,7 @@
       "departure": "Boston",
       "destination": "Berlin"
     },
-    "flightIndex": 2,
+    "flightNumber": "9696",
     "rememberMe": false,
     "passenger": {
       "name": "Jane Doe",

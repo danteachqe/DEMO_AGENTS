@@ -16,7 +16,7 @@ export class ConfirmationPage extends BasePage {
   private valueCellFor(label: string): Locator {
     return this.page
       .locator('table tr')
-      .filter({ has: this.page.locator('td:first-child', { hasText: new RegExp(`^${label}$`) }) })
+      .filter({ has: this.page.locator('td:first-child', { hasText: this.exactText(label) }) })
       .locator('td')
       .nth(1);
   }

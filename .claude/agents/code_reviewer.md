@@ -19,6 +19,11 @@ skill files under `.claude/commands/skills/`):
 - No hardcoded test data — must be loaded from `data/`
 - Naming: PascalCase classes, camelCase methods/variables, kebab-case files
 - No dead code, unused imports, or duplicated selector logic
+- Locators built from dynamic text use `this.exactText()` — no raw interpolation into `new RegExp(...)`
+- Data-driven list/table selection is by business key (e.g. flight number), never `.nth(index)`
+- Boolean controls expose `set<X>(checked: boolean)` via `setChecked()`, not check-only methods
+- Config: blank/invalid env values fall back to defaults (`Number('')` is `0`!); `TIMEOUT` must be `> 0`
+- `playwright.config.ts`: `trace` is `'retain-on-failure'` unless `retries > 0` makes `'on-first-retry'` meaningful
 
 For each issue found:
 1. Fix it directly in the file using `Edit`.

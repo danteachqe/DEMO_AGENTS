@@ -7,7 +7,7 @@ export default defineConfig({
   reporter: 'html',
   use: {
     baseURL: config.baseUrl,
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
   },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },

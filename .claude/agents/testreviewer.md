@@ -18,7 +18,12 @@ skill files under `.claude/commands/skills/`):
 - Waits: `waitFor*` only — no `sleep`, `setTimeout`, or hardcoded numeric delays
 - Naming: PascalCase classes, camelCase methods/variables, kebab-case files
 - Coverage: the test actually exercises every step and the expected result described in the
-  matching spec
+  matching spec — including "left unchecked/off/unchanged" states, which need an explicit
+  assertion (e.g. `toBeChecked({ checked: false })`)
+- No `if`/ternary around `test.step` or `expect` based on test data — every step runs and
+  asserts for every data case
+- List/table items are chosen by business key from `data/` (not an index), with a
+  `toHaveCount(1)` assertion on the match before acting
 
 For each issue found:
 1. Fix it directly in the file using `Edit`. If a spec step has no corresponding test code,

@@ -44,7 +44,8 @@ test.describe('BlazeDemo flight booking - end-to-end', () => {
       });
 
       await test.step('Choose a flight', async () => {
-        await reservePage.chooseFlight(booking.flightIndex);
+        await expect(reservePage.flightRow(booking.flightNumber)).toHaveCount(1);
+        await reservePage.chooseFlight(booking.flightNumber);
         await expect(purchasePage.heading).toContainText(data.expected.reservedHeadingPattern);
       });
 
@@ -66,12 +67,10 @@ test.describe('BlazeDemo flight booking - end-to-end', () => {
         await expect(purchasePage.nameOnCardInput).toHaveValue(booking.payment.nameOnCard);
       });
 
-      if (booking.rememberMe) {
-        await test.step('Tick "Remember me"', async () => {
-          await purchasePage.checkRememberMe();
-          await expect(purchasePage.rememberMeCheckbox).toBeChecked();
-        });
-      }
+      await test.step(`Set "Remember me" to ${booking.rememberMe ? 'checked' : 'unchecked'}`, async () => {
+        await purchasePage.setRememberMe(booking.rememberMe);
+        await expect(purchasePage.rememberMeCheckbox).toBeChecked({ checked: booking.rememberMe });
+      });
 
       await test.step('Purchase flight', async () => {
         await purchasePage.purchaseFlight();

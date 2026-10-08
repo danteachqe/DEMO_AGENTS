@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)",
+      "PowerShell(gh *)",
+      "PowerShell(winget *)",
+      "PowerShell(gh auth *)",
+      "PowerShell(Test-Path *)",
+      "Bash(gh --version)",
+      "PowerShell(refreshenv *)",
+      "Bash(git init *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git check-ignore *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

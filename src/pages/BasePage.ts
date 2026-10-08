@@ -17,6 +17,11 @@ export abstract class BasePage {
     await this.page.waitForLoadState('domcontentloaded');
   }
 
+  /** Anchored, regex-escaped matcher for an exact cell/label text. */
+  protected exactText(text: string): RegExp {
+    return new RegExp(`^${text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`);
+  }
+
   /** Visible pause between steps (STEP_DELAY, default 1000ms) so execution can be watched. */
   protected async pace(): Promise<void> {
     await this.page.waitForTimeout(config.stepDelay);

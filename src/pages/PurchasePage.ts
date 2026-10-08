@@ -67,8 +67,8 @@ export class PurchasePage extends BasePage {
     await this.pace();
   }
 
-  async checkRememberMe(): Promise<void> {
-    await this.rememberMeCheckbox.check();
+  async setRememberMe(checked: boolean): Promise<void> {
+    await this.rememberMeCheckbox.setChecked(checked);
     await this.pace();
   }
 
