@@ -1,0 +1,25 @@
+{
+  "homeHeading": "Welcome to the Simple Travel Agency!",
+  "fromCity": "Boston",
+  "toCity": "London",
+  "reserveHeading": "Flights from Boston to London:",
+  "flightNumber": "43",
+  "passenger": {
+    "name": "Jane Doe",
+    "address": "123 Main St.",
+    "city": "Anytown",
+    "state": "CA",
+    "zipCode": "12345"
+  },
+  "cardType": "visa",
+  "payment": {
+    "cardNumber": "4111111111111111",
+    "month": "12",
+    "year": "2030",
+    "nameOnCard": "Jane Doe"
+  },
+  "rememberMe": false,
+  "confirmationHeading": "Thank you for your purchase today!",
+  "statusLabel": "Status",
+  "expectedStatus": "PendingCapture"
+}

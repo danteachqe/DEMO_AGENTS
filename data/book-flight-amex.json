@@ -1,0 +1,25 @@
+{
+  "homeHeading": "Welcome to the Simple Travel Agency!",
+  "fromCity": "Paris",
+  "toCity": "Rome",
+  "reserveHeading": "Flights from Paris to Rome:",
+  "flightNumber": "9696",
+  "passenger": {
+    "name": "John Smith",
+    "address": "45 Via Roma",
+    "city": "Springfield",
+    "state": "IL",
+    "zipCode": "62701"
+  },
+  "cardType": "amex",
+  "payment": {
+    "cardNumber": "378282246310005",
+    "month": "06",
+    "year": "2031",
+    "nameOnCard": "John Smith"
+  },
+  "rememberMe": true,
+  "confirmationHeading": "Thank you for your purchase today!",
+  "statusLabel": "Status",
+  "expectedStatus": "PendingCapture"
+}
