@@ -12,7 +12,7 @@ const DEFAULTS = {
 
 function readString(name: string, fallback: string): string {
   const raw = process.env[name];
-  return raw && raw.trim() !== '' ? raw.trim() : fallback;
+  return raw !== undefined && raw.trim() !== '' ? raw.trim() : fallback;
 }
 
 function readNumber(name: string, fallback: number, isValid: (n: number) => boolean): number {

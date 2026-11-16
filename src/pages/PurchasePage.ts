@@ -17,6 +17,7 @@ export interface PaymentDetails {
 }
 
 export class PurchasePage extends BasePage {
+  readonly heading: Locator;
   readonly nameInput: Locator;
   readonly addressInput: Locator;
   readonly cityInput: Locator;
@@ -32,6 +33,7 @@ export class PurchasePage extends BasePage {
 
   constructor(page: Page) {
     super(page);
+    this.heading = page.locator('.container h2');
     this.nameInput = page.locator('#inputName');
     this.addressInput = page.locator('#address');
     this.cityInput = page.locator('#city');
