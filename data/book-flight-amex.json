@@ -1,0 +1,32 @@
+{
+  "homeHeading": "Welcome to the Simple Travel Agency!",
+  "departureCity": "Paris",
+  "destinationCity": "Rome",
+  "reserveHeading": "Flights from Paris to Rome:",
+  "flightNumber": "9696",
+  "purchaseHeading": "Your flight from TLV to SFO has been reserved.",
+  "passenger": {
+    "name": "John Example",
+    "address": "45 Rue de Rivoli",
+    "city": "Paris",
+    "state": "IDF",
+    "zipCode": "75001"
+  },
+  "card": {
+    "cardType": "amex",
+    "cardTypeLabel": "American Express",
+    "cardNumber": "378282246310005",
+    "month": "08",
+    "year": "2028",
+    "nameOnCard": "John Example"
+  },
+  "rememberMe": true,
+  "confirmation": {
+    "heading": "Thank you for your purchase today!",
+    "statusLabel": "Status",
+    "idLabel": "Id",
+    "cardNumberLabel": "Card Number",
+    "status": "PendingCapture",
+    "maskedCardPattern": "^x+\\d{4}$"
+  }
+}

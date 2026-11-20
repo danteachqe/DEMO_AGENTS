@@ -1,0 +1,32 @@
+{
+  "homeHeading": "Welcome to the Simple Travel Agency!",
+  "departureCity": "Boston",
+  "destinationCity": "London",
+  "reserveHeading": "Flights from Boston to London:",
+  "flightNumber": "43",
+  "purchaseHeading": "Your flight from TLV to SFO has been reserved.",
+  "passenger": {
+    "name": "Jane Tester",
+    "address": "123 Main Street",
+    "city": "Boston",
+    "state": "MA",
+    "zipCode": "02101"
+  },
+  "card": {
+    "cardType": "visa",
+    "cardTypeLabel": "Visa",
+    "cardNumber": "4111111111111111",
+    "month": "11",
+    "year": "2027",
+    "nameOnCard": "Jane Tester"
+  },
+  "rememberMe": false,
+  "confirmation": {
+    "heading": "Thank you for your purchase today!",
+    "statusLabel": "Status",
+    "idLabel": "Id",
+    "cardNumberLabel": "Card Number",
+    "status": "PendingCapture",
+    "maskedCardPattern": "^x+\\d{4}$"
+  }
+}
